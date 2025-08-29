@@ -26,8 +26,9 @@ jobs:
       - name: Run Playwright tests inside Docker container
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}:/app \
-            ghcr.io/${{ github.repository_owner }}/playwright-tests:latest \
+          ghcr.io/${{ github.repository_owner }}/playwright-tests:latest
+          npx playwright test
+
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
