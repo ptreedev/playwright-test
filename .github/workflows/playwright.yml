@@ -26,7 +26,6 @@ jobs:
       - name: Run Playwright tests inside Docker container
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}:/app \
             -v ${{ github.workspace }}/playwright-report:/app/playwright-report \
             ghcr.io/${{ github.repository_owner }}/playwright-tests:latest
 
